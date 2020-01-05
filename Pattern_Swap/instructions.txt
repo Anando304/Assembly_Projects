@@ -1,0 +1,55 @@
+General Overview:
+The following Assembly program is used to randomly generate an array that will be associated with a patter.
+In an infinite loop, the user can swap the array values which in turn also changes the pattern.
+This is just a simple program showcasing the use of NASM assembly topics such as Stacks, registers, jump statements, loops etc
+Below are instructions to run the program aswell as how the output will look.
+
+
+
+
+Instructions:
+Use the makefile to compile,link and run the program
+
+Open linux terminal and type...
+	make
+
+OUTPUT:
+nasm -f elf64 -o fproj.o fproj.asm
+nasm -f elf64 -o simple_io.o simple_io.asm
+gcc -o fproj driver.c fproj.o simple_io.o
+
+
+
+*******************************************************************************************
+Then type...
+	./fproj
+
+OUTPUT:
+.....++........+........+-+.....+------+..+-----+....+----+.....+--+.....+---+..
+     2         1         3         8         7         6         4         5    
+enter a,b to swap
+0 to terminate: 2,3
+....+-+........+.........++.....+------+..+-----+....+----+.....+--+.....+---+..
+     3         1         2         8         7         6         4         5    
+enter a,b to swap
+0 to terminate: 3,5
+...+---+.......+.........++.....+------+..+-----+....+----+.....+--+......+-+...
+     5         1         2         8         7         6         4         3    
+enter a,b to swap
+0 to terminate: 8,5
+..+------+.....+.........++......+---+....+-----+....+----+.....+--+......+-+...
+     8         1         2         5         7         6         4         3    
+enter a,b to swap
+0 to terminate: 0
+
+
+
+
+
+
+
+
+
+
+To clear/remove the generated files from compilation/linking, type the following...
+	make clean

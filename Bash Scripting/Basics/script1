@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo -u "Please enter three-letter code of the day of the week"
+echo "examples: Mon, Tue, ..., Sun"
+read X
+echo "+++++++++++++++++"
+currentdate=`date`
+Y=${currentdate:0:3}
+if [ "$Y" == "$X" ]
+then
+     echo "Good answer"
+     echo "The day of the week is $X"
+else     
+     echo "Bad answer"
+     echo "Your answer: $X, real day: $Y"
+fi

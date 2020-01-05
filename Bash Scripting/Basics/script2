@@ -1,0 +1,23 @@
+#!/bin/bash
+
+mkdir DIR1
+echo "DIR1 created"
+mkdir DIR1/DIR2
+echo "DIR1/DIR2 created"
+cd DIR1
+cd DIR2
+touch X
+echo "I am file X" >> X
+cd ..
+cd ..
+echo "contents of DIR2"
+dir DIR1/DIR2
+echo "contents of DIR1"
+dir DIR1
+echo "contents of current directory"
+dir
+mv DIR1/DIR2/X X #Moves file from the given directory to current directory(empty space)
+rmdir DIR1
+rm DIR1
+rm -r DIR1
+dir

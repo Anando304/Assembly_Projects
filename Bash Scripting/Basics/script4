@@ -1,0 +1,70 @@
+#!/bin/bash
+
+#Bash program for Command line arguments
+echo "$#" #Displays number of command line args
+
+if [ "$#" -gt 3 ];
+then
+	echo -e "wrong number of command line arguments"
+	echo -e "Usage: script2 -0 <file1> <file2>\n    or\n      script2 -1 <file>\n    or\n       script2 -2"
+	exit
+
+elif [ "$#" == 3 ];
+then
+	if [ "$1" != "-0" ];then
+	echo "incorrect command line argument: $1"
+	echo -e "Usage: script2 -0 <file1> <file2>\n    or\n      script2 -1 <file>\n    or\n       script2 -2"
+
+	elif [ "$1" == "-0" ];then
+	echo "creating file $1"
+	echo "test2" >> $1
+	cat $1
+
+	echo -e "creating file $3"
+	echo "test2" >> $3
+	cat $3
+
+	fi
+
+	exit
+
+
+
+
+
+
+elif [ "$#" == 2 ];
+then
+	if [ "$1" != "-1" ];
+	then
+		echo "incorrect command line argument: $2"
+		echo -e "Usage: script2 -0 <file1> <file2>\n    or\n      script2 -1 <file>\n    or\n       script2 -2"
+
+	
+	elif [ "$1" == "-1" ];
+	then
+		echo "testing file $2"
+	fi
+
+	exit
+
+
+
+
+
+elif [ "$#" == 1 ];
+then
+	if [ "$1" != "-2" ];
+	then
+		echo "incorrect command line argument: $1"
+		echo -e "Usage: script2 -0 <file1> <file2>\n    or\n      script2 -1 <file>\n    or\n       script2 -2"
+
+	
+	elif [ "$1" == "-2" ];
+	then
+		echo "Good bye"
+	fi
+
+	exit
+
+fi 

@@ -1,0 +1,3 @@
+nasm -f elf64 -o hello.o hello.asm      //Basically takes the input file(hello.asm) and generates an object file called hello.o from nasm
+
+ld hello.o -o hello    //Basically creates the executable file so that we can do ./hello

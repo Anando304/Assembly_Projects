@@ -1,0 +1,75 @@
+mkdir Outer_Directory
+cd Outer_Directory
+          
+for i in {1..15}
+do        
+  echo "value=${i}00" > proj${i}_file
+done         
+      
+echo "Next file does not exist" >> proj15_file
+      
+#Displaying contents of the files as said in step 3.
+    
+for i in {1..15}
+do  
+  echo "proj${i}_file:" 
+  cat proj${i}_file
+done
+    
+mkdir Inner_Directory
+    
+for i in {1..15}
+do
+
+  if [ ${i} == 3 ]; then 
+  	mv proj$(i)_file ./Inner_Directory 
+
+  elif [ ${i}  == 6 ]; then 
+  	mv proj${i}_file ./Inner_Directory 
+  fi
+
+
+
+done
+
+echo "Outer_Directory regular files"
+dir
+
+
+echo "Inner_Directory regular files"
+dir Inner_Directory
+
+cd Inner_Directory
+
+files=`dir`
+touch Everything
+
+for f in $files
+do
+  cat $f >> Everything
+  rm $f
+done
+
+dir
+echo "Inner_Directory and all its files removed"
+
+rm Everything
+
+cd ..
+
+rmdir Inner_Directory
+
+echo "Outer_Directory and all its files removed"
+
+files=`dir`
+
+for f in $files
+do
+  rm $f
+done
+
+cd ..
+rmdir Outer_Directory
+
+echo "Current Directory"
+dir

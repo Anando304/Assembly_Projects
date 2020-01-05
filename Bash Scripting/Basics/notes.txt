@@ -1,0 +1,6 @@
+To run these files on linux, type the following commands
+	dos2unix filename
+	chmod u+x filename
+
+Then you can run the file by typing...
+	./filename

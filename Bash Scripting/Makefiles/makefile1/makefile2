@@ -1,0 +1,41 @@
+SHELL:=/bin/bash
+
+all: build DOCUMENT
+
+build:
+	mkdir DOCREP1
+	cp document1 ./DOCREP1/document 
+	
+	mkdir DOCREP2
+	cp document2 ./DOCREP2/document
+	
+	mkdir DOCREP3
+	cp document3 ./DOCREP3/document
+	
+	mkdir DOCREP4
+	cp document4 ./DOCREP4/document
+
+DOCUMENT:
+	
+	g++ -o arrange arrange.cpp
+	
+	
+	./arrange ./DOCREP4/document > DOCUMENTA
+	./arrange ./DOCREP3/document > DOCUMENTB
+	./arrange ./DOCREP2/document > DOCUMENTC
+	./arrange ./DOCREP1/document > DOCUMENTD
+	
+	cat DOCUMENTA DOCUMENTB DOCUMENTC DOCUMENTD > DOCUMENT
+	rm DOCUMENTA DOCUMENTB DOCUMENTC DOCUMENTD
+
+
+
+	
+
+	
+
+
+clean:
+	rm -r DOCREP1 DOCREP2 DOCREP3 DOCREP4
+	rm DOCUMENT
+	

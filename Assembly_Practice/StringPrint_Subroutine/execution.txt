@@ -1,0 +1,3 @@
+nasm -f elf64 -o stringprint.o stringprint.asm      
+
+ld stringprint.o -o stringprint
