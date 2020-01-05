@@ -1,5 +1,5 @@
 General Overview:
-The following Assembly program is used to randomly generate an array that will be associated with a patter.
+The following Assembly program is used to randomly generate an array that will be associated with a pattern.
 In an infinite loop, the user can swap the array values which in turn also changes the pattern.
 This is just a simple program showcasing the use of NASM assembly topics such as Stacks, registers, jump statements, loops etc
 Below are instructions to run the program aswell as how the output will look.
